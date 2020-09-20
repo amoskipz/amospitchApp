@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to this wonderfull Pitch App
+This is your first time and you are so much welcome on board. We can't wait to see your first pitch buddy.. 
