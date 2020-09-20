@@ -7,6 +7,16 @@ from flask_mail import Mail
 from flask_uploads import UploadSet,configure_uploads,IMAGES
 from flask_simplemde import SimpleMDE
 
+
+
+bootstrap = Bootstrap()
+db = SQLAlchemy()
+login_manager = LoginManager()
+photos = UploadSet('photos',IMAGES)
+mail= Mail()
+simple = SimpleMDE()
+
+
 def create_app(config_name):
     app = Flask(__name__)
     
