@@ -62,3 +62,18 @@ def new_category():
         return redirect(url_for('.index'))
     title = 'New Category'   
     return render_template('post_comment.html', comment_form = form, title = title)    
+
+@main.route('/view_pitch/<int:id>', methods = ['GET', 'POST'])
+@login_required
+def view_pitch(id):
+    """
+    Function that returns a single pitch with comments
+    """
+    print(id)
+    pitches = Pitch.query.get(id)
+    if pitches is None:
+        abort(404)
+           
+    comment = Comments.get_comments(id)
+    title = 'View Pitch'
+    return render_template('view_pitch.html', pitches= pitches, comment = comment, category_= id, title= title)
