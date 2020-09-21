@@ -77,3 +77,21 @@ def view_pitch(id):
     comment = Comments.get_comments(id)
     title = 'View Pitch'
     return render_template('view_pitch.html', pitches= pitches, comment = comment, category_= id, title= title)
+
+@main.route('/write_comment/<int:id>', methods=['GET', 'POST'])
+@login_required
+def post_comment(id):
+    """
+    Fuction to add comments
+    """
+    form = CommentForm()
+    title = "Add a  comment"
+    pitches = Pitch.query.filter_by(id=id).first()
+
+    if form.validate_on_submit():
+        comment = form.comment.data
+        new_comment = Comments(comment=comment, user_id=current_user.id, pitches_id=pitches.id)
+        new_comment.save_comment()
+        return redirect(url_for('.view_pitch', id=pitches.id))
+
+    return render_template('post_comment.html', comment_form=form, title=title)
