@@ -64,7 +64,7 @@ def new_category():
     title = 'New Category'   
     return render_template('post_comment.html', comment_form = form, title = title)    
 
-@main.route('/view_pitch/<int:id>', methods = ['GET', 'POST'])
+@main.route('/view/<int:id>', methods = ['GET', 'POST'])
 @login_required
 def view_pitch(id):
     """
@@ -77,7 +77,7 @@ def view_pitch(id):
            
     comment = Comments.get_comments(id)
     title = 'View Pitch'
-    return render_template('view_pitch.html', pitches= pitches, comment = comment, category_= id, title= title)
+    return render_template('view.html', pitches= pitches, comment = comment, category_= id, title= title)
 
 @main.route('/write_comment/<int:id>', methods=['GET', 'POST'])
 @login_required

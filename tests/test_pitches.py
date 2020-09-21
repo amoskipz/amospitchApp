@@ -11,7 +11,8 @@ class PitchTest(unittest.TestCase):
         """
         Set up method that will run before every Test
         """
-        self.new_pitch = Pitch(1234, 'name','description')
+        self.new_pitch = Pitch(0000, 'name','description')
+        
     def test_instance(self):
         self.assertTrue(isinstance(self.new_pitch))
         
