@@ -9,6 +9,7 @@ from flask_simplemde import SimpleMDE
 
 
 
+
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 login_manager = LoginManager()
