@@ -28,6 +28,7 @@ This is an app that displays different categories of pitches. The user can regis
 - Heroku
 
 # Codebeat
+
 [![codebeat badge](https://codebeat.co/badges/5030fa5c-547a-49da-880c-c31090ca86dd)](https://codebeat.co/projects/github-com-langat05-pitch-master)
 
 ## Contact Details
