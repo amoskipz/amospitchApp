@@ -12,23 +12,17 @@ super() }} {%endblock%} {% block content %}
     >
       {{ pitches.pitch }}
     </h3>
-    <h3 style="color: rgb(255, 60, 0); font-weight: medium">comments</h3>
-  </div>
-  {% if comment %} {{ macro.displaySpecificPitch(comment)}}
-  <br />
-  {%else%}
-  <h3 class="text-center" style="color: rgb(255, 38, 0)">No comments found</h3>
-  {% endif %}
+  </div><br>
 
   <div class="col-md-4">
     <button type="button" class="btn btn-default">
-      <a class="btn btn-round" href="{{url_for('.upvote',id=pitches.id)}}"
-        >Upvote<span class="glyphicon glyphicon-upload"></span
+      <a class="fa fa-thumbs-up" href="{{url_for('.upvote',id=pitches.id)}}"
+        style="color: black;" 
       ></a>
     </button>
     <button type="button" class="btn btn-default">
-      <a class="btn btn-round" href="{{url_for('.downvote',id=pitches.id)}}"
-        >Downvote<span class="glyphicon glyphicon-download"></span
+      <a class="fa fa-thumbs-down" href="{{url_for('.downvote',id=pitches.id)}}"
+        style="color: red;"
       ></a>
     </button>
     <button type="button" class="btn btn-default">
@@ -47,6 +41,14 @@ super() }} {%endblock%} {% block content %}
       >
     </button>
   </div>
+
+    <h3 style="color: rgb(255, 60, 0); font-weight: medium">comments</h3>
+
+  {% if comment %} {{ macro.displaySpecificPitch(comment)}}
+  <br />
+  {%else%}
+  <h3 class="text-center" style="color: rgb(255, 38, 0)">No comments found</h3>
+  {% endif %}
 </div>
 
 {% endblock %}
