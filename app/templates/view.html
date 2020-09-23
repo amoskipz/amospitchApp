@@ -12,42 +12,70 @@ super() }} {%endblock%} {% block content %}
     >
       {{ pitches.pitch }}
     </h3>
-  </div><br>
+  </div>
+  <br />
 
   <div class="col-md-4">
-    <button type="button" class="btn btn-default">
-      <a class="fa fa-thumbs-up" href="{{url_for('.upvote',id=pitches.id)}}"
-        style="color: black;" 
+    <script type="text/javascript">
+      var clicks = 0; // should be var not int
+      function clickME() {
+        clicks += 1;
+        document.getElementById("clicks").innerHTML = clicks; //getElementById() not getElementByID() Which you corrected in edit
+      }
+    </script>
+    <button type="button" onClick="clickME()" class="btn btn-default">
+      <a
+        class="fa fa-thumbs-up"
+        id="clicks"
+        href="{{url_for('.upvote',id=pitches.id)}}"
+        style="color: black"
       ></a>
     </button>
-    <button type="button" class="btn btn-default">
-      <a class="fa fa-thumbs-down" href="{{url_for('.downvote',id=pitches.id)}}"
-        style="color: red;"
+    <script type="text/javascript">
+      var clicks = 0; // should be var not int
+      function hello() {
+        clicks += 1;
+        document.getElementById("click").innerHTML = clicks; //getElementById() not getElementByID() Which you corrected in edit
+      }
+    </script>
+    <button
+      type="button"
+      onClick="hello()"
+      class="btn btn-default;"
+      style="margin-left: 3em"
+    >
+      <a
+        class="fa fa-thumbs-down"
+        id="click"
+        href="{{url_for('.downvote',id=pitches.id)}}"
+        style="color: red"
       ></a>
     </button>
-    <button type="button" class="btn btn-default">
-      <a
-        class="btn btn-primary"
-        href="{{url_for('.post_comment',id=pitches.id)}}"
-      >
-        Add comments</a
-      >
-    </button>
-    <button>
-      <a
-        class="btn btn-primary"
-        href="{{url_for('.new_pitch',id=pitches.category_id)}}"
-        >Post a Pitch</a
-      >
-    </button>
+    <div>
+      <button type="button" class="btn btn-default" style="margin-top: 2em">
+        <a
+          class="btn btn-primary"
+          href="{{url_for('.post_comment',id=pitches.id)}}"
+        >
+          Add comments</a
+        >
+      </button>
+      <button type="button" class="btn btn-default" style="margin-top: 2em">
+        <a
+          class="btn btn-primary"
+          href="{{url_for('.new_pitch',id=pitches.category_id)}}"
+          >Post a Pitch</a
+        >
+      </button>
+    </div>
   </div>
+  <br /><br />
+</div>
+<div class="container">
+  <h3 style="color: blue">comments</h3>
 
-    <h3 style="color: rgb(255, 60, 0); font-weight: medium">comments</h3>
-
-  {% if comment %} {{ macro.displaySpecificPitch(comment)}}
-  <br />
-  {%else%}
-  <h3 class="text-center" style="color: rgb(255, 38, 0)">No comments found</h3>
+  {% if comment %} {{ macro.displaySpecificPitch(comment)}} {%else%}
+  <h3 style="color: blue">No comments found</h3>
   {% endif %}
 </div>
 
