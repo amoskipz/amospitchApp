@@ -5,7 +5,7 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
     UPLOADED_PHOTOS_DEST ='app/static/photos'
-    # SQLALCHEMY_DATABASE_URI="postgres://moringa:Access@localhost:5432/justus"
+    # SQLALCHEMY_DATABASE_URI="postgres://moringa:Access@localhost:5432/amos"
     print (SQLALCHEMY_DATABASE_URI, "00000")
     #  email configurations
     MAIL_SERVER = 'smtp.googlemail.com'
@@ -14,7 +14,7 @@ class Config:
     MAIL_USERNAME = os.environ.get("MAIL_USERNAME")
     MAIL_PASSWORD = os.environ.get("MAIL_PASSWORD")
     SUBJECT_PREFIX = 'pitch'
-    SENDER_EMAIL = 'justuslangat78@gmail.com'
+    SENDER_EMAIL = 'koechkipz03@gmail.com'
     
 # simple mde  configurations
     SIMPLEMDE_JS_IIFE = True
@@ -31,7 +31,7 @@ class TestConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:Access@localhost/pitch_test'
 
 class DevConfig(Config):
-    SQLALCHEMY_DATABASE_URI="postgres://moringa:Access@localhost:5432/kenya"
+    SQLALCHEMY_DATABASE_URI="postgres://moringa:Access@localhost:5432/amos"
     DEVELOPMENT = True
     DEBUG = True
 config_options = {

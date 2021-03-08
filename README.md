@@ -2,7 +2,7 @@
 
 ## Author
 
-Langat K Justus
+Kiprotich Amos Koech
 
 ## Description
 
@@ -11,7 +11,7 @@ This is an app that displays different categories of pitches. The user can regis
 ## Setup installation
 
 - Clone the repository from github
-   <https://github.com/langat05/pitch>
+   <https://github.com/amoskipz/pitch>
 
 - Cd project folder and open with atom or code .
 
@@ -19,7 +19,7 @@ This is an app that displays different categories of pitches. The user can regis
 
    pip install -r requirements.txt
 
-- Run python3.8 manage.py server to launch it
+- Run python3.6 manage.py server to launch it
 
 ## Technologies used
 
@@ -27,13 +27,9 @@ This is an app that displays different categories of pitches. The user can regis
 - Flask
 - Heroku
 
-# Codebeat
-
-[![codebeat badge](https://codebeat.co/badges/5030fa5c-547a-49da-880c-c31090ca86dd)](https://codebeat.co/projects/github-com-langat05-pitch-master)
-
 ## Contact Details
 
-If you have any suggestion or modification that can better this project, feel free to contact me. Here are my details: Langat K Justus Email: Justuslangat78@gmail.com
+If you have any suggestion or modification that can better this project, feel free to contact me. Here are my details: Kiprotich Amos Koech Email: koechkipz03@gmail.com
 
 ## LICENSE
 
